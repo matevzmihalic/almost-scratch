@@ -4,20 +4,19 @@ on:
     - cron: '0 0 1 * *'
 
 jobs:
-  build:
-    name: Tag
+  tag:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@master
     - name: Create a new tag
       run: |
-        TAG=$(date +"%Y-%m") \
         curl --request POST \
           --url https://api.github.com/repos/${{ github.repository }}/git/tags \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'content-type: application/json' \
-          --data '{
-            "tag": "${{ TAG }}",
-            "message": "Monthly update - ${{ TAG }}",
-            "object": "HEAD",
-            "type": "commit"
-            }'
+          --data "{
+            \"tag\": \"$(date +"%Y-%m")\",
+            \"message\": \"Monthly update - $(date +"%Y-%m")\",
+            \"object\": \"$(git rev-parse HEAD)\",
+            \"type\": \"commit\"
+            }"
