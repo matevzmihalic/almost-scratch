@@ -1,4 +1,4 @@
-# almost-scratch
+# almost-scratch [![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/matevzmihalic/almost-scratch)](https://hub.docker.com/r/matevzmihalic/almost-scratch)
 
 is a Docker image created from scratch that includes:
 
