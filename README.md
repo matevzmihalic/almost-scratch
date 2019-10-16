@@ -1,4 +1,4 @@
-# almost-scratch [![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/matevzmihalic/almost-scratch)](https://hub.docker.com/r/matevzmihalic/almost-scratch)
+# scratch-improved [![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/matevzmihalic/scratch-improved)](https://hub.docker.com/r/matevzmihalic/scratch-improved)
 
 is a Docker image created from scratch that includes:
 
@@ -16,8 +16,8 @@ Every month we will update `ca-certificates` and push a new tag in format `year-
 
 ```Dockerfile
 # you can use tagged version
-FROM matevzmihalic/almost-scratch:2019-10
+FROM matevzmihalic/scratch-improved:2019-10
 
 # or you can use latest
-FROM matevzmihalic/almost-scratch
+FROM matevzmihalic/scratch-improved
 ```
